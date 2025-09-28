@@ -6,17 +6,12 @@ const person: Person = {
   lastName: "Durand",
   name: `Romain Durand`,
   role: "Monteur",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
+  avatar: "/images/avatar.png",
+  email: "Contact.romain.durand@gmail.com",
   location: "Europe/Paris", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Français", "Anglais"], // optional: Leave the array empty if you don't want to display languages
 };
 
-const newsletter: Newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
-};
 
 const social: Social = [
   // Links are automatically displayed.
@@ -25,11 +20,6 @@ const social: Social = [
     name: "LinkedIn",
     icon: "linkedin",
     link: "https://www.linkedin.com/in/romain-durand-a20b212b5/",
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
   },
   {
     name: "Email",
@@ -76,7 +66,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: ` Je m'appelle ${person.name}, ${person.role}, je suis localisé sur ${person.location}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -101,7 +91,7 @@ const about: About = {
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Experience Professionel",
     experiences: [
       {
         company: "FLY",
@@ -147,7 +137,7 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Etudes",
     institutions: [
       {
         name: "University of Jakarta",
@@ -161,7 +151,7 @@ const about: About = {
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Compétences",
     skills: [
       {
         title: "Figma",
@@ -190,46 +180,8 @@ const about: About = {
           },
         ],
       },
-      {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },  
     ],
   },
-};
-
-const blog: Blog = {
-  path: "/blog",
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 };
 
 const work: Work = {
@@ -292,4 +244,4 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, home, about, work, gallery };

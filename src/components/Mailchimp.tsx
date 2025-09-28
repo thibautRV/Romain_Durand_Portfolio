@@ -1,6 +1,6 @@
 "use client";
 
-import { mailchimp, newsletter } from "@/resources";
+import { mailchimp } from "@/resources";
 import { Button, Heading, Input, Text, Background, Column, Row } from "@once-ui-system/core";
 import { opacity, SpacingToken } from "@once-ui-system/core";
 import { useState } from "react";
@@ -46,8 +46,6 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
       setError("Please enter a valid email address.");
     }
   };
-
-  if (newsletter.display === false) return null;
 
   return (
     <Column
@@ -104,14 +102,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
           color: mailchimp.effects.lines.color,
         }}
       />
-      <Column maxWidth="xs" horizontal="center">
-        <Heading marginBottom="s" variant="display-strong-xs">
-          {newsletter.title}
-        </Heading>
-        <Text wrap="balance" marginBottom="l" variant="body-default-l" onBackground="neutral-weak">
-          {newsletter.description}
-        </Text>
-      </Column>
+      
       <form
         style={{
           width: "100%",
